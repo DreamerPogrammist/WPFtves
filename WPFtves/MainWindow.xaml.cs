@@ -73,7 +73,7 @@ namespace WPFtves
 
         private void BtnAddPatient_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show($"Пациент {selected.LastName}{}{} добавлен")
+            //MessageBox.Show($"Пациент {selected.LastName}{selected.Name}{selected.FatherName} добавлен")
         }
     }
 }
