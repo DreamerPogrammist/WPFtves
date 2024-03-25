@@ -35,40 +35,38 @@
 
             <!--Фамилия-->
             <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,10,10,10">Фамилия:</TextBlock>
-            <TextBox MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding LastName}"/>
+            <TextBox x:Name="TbLastName" MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding LastName}"/>
 
             <!--Имя-->
             <TextBlock Grid.Row="1"  Margin="10,10,10,10">Имя:</TextBlock>
-            <TextBox Grid.Row="1" MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding NamePatient}"/>
+            <TextBox x:Name="TbName" Grid.Row="1" MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" DataContext="{Binding}" Text="{Binding NamePatient}"/>
 
             <!--Отчество-->
             <TextBlock Grid.Row="2"  Margin="10,10,10,10">Отчество:</TextBlock>
-            <TextBox Grid.Row="2" MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding FatherName}"/>
+            <TextBox x:Name="TbFatherName" Grid.Row="2" MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding FatherName}"/>
 
             <!--Дата рождения-->
             <TextBlock Grid.Row="0" Grid.Column="3" Margin="10,10,10,10">Дата рождения:</TextBlock>
-            <TextBox Grid.Row="0" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Birthday}"/>
+            <TextBox x:Name="TbBirthday" Grid.Row="0" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Birthday}"/>
 
             <!--Пол-->
             <TextBlock Grid.Row="1" Margin="10,10,10,10" Grid.Column="3">Пол:</TextBlock>
-            <TextBox Grid.Row="1" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Sex}"/>
+            <TextBox x:Name="TbSex" Grid.Row="1" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Sex}"/>
 
             <!--СНИЛС-->
             <TextBlock Grid.Row="2" Margin="10,10,10,10" Grid.Column="3">СНИЛС:</TextBlock>
-            <TextBox Grid.Row="2" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Insurance}"/>
+            <TextBox x:Name="TbInsurance" Grid.Row="2" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Insurance}"/>
             
             <!--Измерения-->
             <TextBlock Grid.Row="3" Margin="10,10,10,10" Grid.Column="1">Измерения:</TextBlock>
-            <TextBox Grid.Row="2" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Insurance}"/>
-
-
+            
             <!--Вес-->
             <TextBlock Grid.Row="4" Margin="10,10,10,10" Grid.Column="0">Вес:</TextBlock>
-            <TextBox Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding Weight}"/>
+            <TextBox x:Name="TbWeight" Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding Weight}"/>
             
             <!--Рост-->
             <TextBlock Grid.Row="4" Margin="10,10,10,10" Grid.Column="3">Рост:</TextBlock>
-            <TextBox Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Height}"/>
+            <TextBox x:Name="TbHeight" Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Height}"/>
             
 
 

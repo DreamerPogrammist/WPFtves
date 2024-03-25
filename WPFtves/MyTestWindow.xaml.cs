@@ -19,43 +19,28 @@ namespace WPFtves
     
     public partial class MyTestWindow : Window
     {
-        //public Patient Patient { get; set; }
+        public Patient Patient { get; set; } = new Patient();
         //public ObservableCollection<Patient> Patients { get; set; }
 
         public MyTestWindow()
         {
             //Patient = patient;
             InitializeComponent();
-            //DataContext = Patient;
+            DataContext = Patient;
+            TbLastName.DataContext = Patient;
+            TbName.DataContext = Patient;
+            TbFatherName.DataContext = Patient;
+            TbBirthday.DataContext = Patient;
+            TbSex.DataContext = Patient;
+            TbInsurance.DataContext = Patient;
+            TbHeight.DataContext = Patient;
+            TbWeight.DataContext = Patient;
         }
 
-        //private void LoadPatients()
-        //{
-        //    Patients.Clear();
-
-        //    var list = Patient.GetList();
-        //    foreach (var item in list)
-        //    {
-        //        Patients.Add(item);
-        //    }
-        //}
-
+        
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
-            //    if (!Patient.Create())
-            //        return;
-
-            //    LoadPatients();
-
-            //    Patient = new Patient();
-
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("ошибка!");
-            //}
+            Patient.Create();
 
             string message = "Пациент добавлен!";
             MessageBox.Show(message);

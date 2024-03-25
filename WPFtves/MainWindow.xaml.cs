@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFtves.Objects;
 using WPFtves.AppData;
+using System.DirectoryServices;
 
 namespace WPFtves
 {
@@ -53,6 +54,12 @@ namespace WPFtves
 
         private void BtnD_Click(object sender, RoutedEventArgs e)
         {
+            if (DgPatients.SelectedItem is Patient selected)
+            {
+                Patient.Delete(selected.Id);
+            }        
+
+            LoadPatients();
             string message = "Пациент удалён!";
             MessageBox.Show(message);
         }
@@ -61,7 +68,8 @@ namespace WPFtves
         {
 
             MyTestWindow myTestWindow = new MyTestWindow();
-            myTestWindow.Show();
+            myTestWindow.ShowDialog();
+            LoadPatients();
         }
 
         private void DgPatients_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

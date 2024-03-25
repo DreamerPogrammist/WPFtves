@@ -48,6 +48,13 @@ namespace WPFtves.AppData
             return command;
         }
 
+        //public static NpgsqlCommand DelCommand(string sql)
+        //{
+        //    NpgsqlCommand command = new NpgsqlCommand();
+        //    command.Connection = Connection;
+            
+        //    return command;
+        //}
         
     }
 }

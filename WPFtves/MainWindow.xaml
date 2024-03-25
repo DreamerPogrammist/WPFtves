@@ -32,8 +32,8 @@
 
             </Grid.RowDefinitions>
 
-
-            <DataGrid ItemsSource="{Binding Patients}" Name="DgPatients" Grid.Row="6" Grid.ColumnSpan="6" AutoGenerateColumns="False" SelectedItem="{Binding Patients}"
+            <DataGrid ItemsSource="{Binding Patients}" Name="DgPatients" Grid.Row="6" Grid.ColumnSpan="6" AutoGenerateColumns="False" 
+                      SelectedItem="{Binding Patient}"
                       MouseLeftButtonUp="DgPatients_MouseLeftButtonUp">
 
                 <!--IsReadOnly="True"-->
