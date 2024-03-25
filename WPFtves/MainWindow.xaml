@@ -8,12 +8,12 @@
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="51*" />
-            <RowDefinition Height="11*"/>
+            <RowDefinition Height="50*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.RowSpan="2">
+        <Grid Grid.RowSpan="6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
@@ -29,53 +29,37 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+
             </Grid.RowDefinitions>
 
-            <!--Фамилия-->
-            <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,10,10,10">Фамилия:</TextBlock>
-            <TextBox MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding LastName}"/>
 
-            <!--Имя-->
-            <TextBlock Grid.Row="1"  Margin="10,10,10,10">Имя:</TextBlock>
-            <TextBox Grid.Row="1" MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding Name}"/>
-
-            <!--Отчество-->
-            <TextBlock Grid.Row="2"  Margin="10,10,10,10">Отчество:</TextBlock>
-            <TextBox Grid.Row="2" MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding FatherName}"/>
-
-            <!--Дата рождения-->
-            <TextBlock Grid.Row="0" Grid.Column="3" Margin="10,10,10,10">Дата рождения:</TextBlock>
-            <TextBox Grid.Row="0" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4"/>
-
-            <!--Пол-->
-            <TextBlock Grid.Row="1" Margin="10,10,10,10" Grid.Column="3">Пол:</TextBlock>
-            <TextBox Grid.Row="1" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4"/>
-
-            <!--СНИЛС-->
-            <TextBlock Grid.Row="2" Margin="10,10,10,10" Grid.Column="3">СНИЛС:</TextBlock>
-            <TextBox Grid.Row="2" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4"/>
-
-            <Button Grid.Row="4" Name="BtnOpenWindow" Click="BtnOpenWindow_Click" Margin="0,0,0,26" Grid.RowSpan="2">Открыть форму</Button>
-
-            <Button Grid.Row="4" Name="BtnAddPatient" Click="BtnAddPatient_Click" Margin="0,0,0,26" Grid.RowSpan="2" Grid.Column="3">Добавить пациента</Button>
-
-            <DataGrid Name="DgPatients" Grid.Row="6" Grid.ColumnSpan="4" AutoGenerateColumns="False" SelectedItem="{Binding CurrentPatient}"
+            <DataGrid ItemsSource="{Binding Patients}" Name="DgPatients" Grid.Row="6" Grid.ColumnSpan="6" AutoGenerateColumns="False" SelectedItem="{Binding Patients}"
                       MouseLeftButtonUp="DgPatients_MouseLeftButtonUp">
 
-                <!--<DataGrid Name="">-->
-                
                 <!--IsReadOnly="True"-->
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding LastName}" Header="Фамилия"/>
+                    <DataGridTextColumn Binding="{Binding NamePatient}" Header="Имя"/>
+                    <DataGridTextColumn Binding="{Binding FatherName}" Header="Отчество"/>
+                    <DataGridTextColumn Binding="{Binding Birthday}" Header="Дата рождения"/>
+                    <DataGridTextColumn Binding="{Binding Sex}" Header="Пол"/>
+                    <DataGridTextColumn Binding="{Binding Insurance}" Header="СНИЛС"/>
+                    <DataGridTextColumn Binding="{Binding Height}" Header="Рост"/>
+                    <DataGridTextColumn Binding="{Binding Weight}" Header="Вес"/>
+
                 </DataGrid.Columns>
+
             </DataGrid>
+
+
         </Grid>
 
         <!--Кнопки-->
-        <!--<DockPanel Grid.Row="1" LastChildFill="False" HorizontalAlignment="Right">
-            <Button Name="BtnOk" Click="BtnOk_Click" Width="80" Background="White" Padding="5" Margin="10" DockPanel.Dock="Left">ОК</Button>
-            <Button Name="BtnCancel" Click="BtnCancel_Click" Width="80" Background="White" Padding="5" Margin="10" DockPanel.Dock="Left">Отмена</Button>
-        </DockPanel>-->
+       
+         <DockPanel Grid.Row="3" LastChildFill="False" HorizontalAlignment="Right">
+            <Button Grid.Row="4" Name="BtnDel_Click" Click="BtnD_Click" Margin="10,5,10,5" Grid.RowSpan="1" Grid.Column="4">Удалиь пациента</Button>
+            <Button Grid.Row="4" Name="BtnAdd_Click"  Click="Btn_Click" Margin="10,5,10,5" Grid.RowSpan="1" Grid.Column="4" >Добавить пациента</Button>
+        </DockPanel> 
+        
     </Grid>
 </Window>
