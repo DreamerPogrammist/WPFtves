@@ -47,7 +47,7 @@
 
             <!--Дата рождения-->
             <TextBlock Grid.Row="0" Grid.Column="3" Margin="10,10,10,10">Дата рождения:</TextBlock>
-            <TextBox x:Name="TbBirthday" Grid.Row="0" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Birthday}"/>
+            <DatePicker x:Name="TbBirthday" Grid.Row="0" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Birthday}" SelectedDateFormat="Short" SelectedDateChanged="TbBirthday_SelectedDateChanged"/>
 
             <!--Пол-->
             <TextBlock Grid.Row="1" Margin="10,10,10,10" Grid.Column="3">Пол:</TextBlock>
@@ -62,19 +62,19 @@
             
             <!--Вес-->
             <TextBlock Grid.Row="4" Margin="10,10,10,10" Grid.Column="0">Вес:</TextBlock>
-            <TextBox x:Name="TbWeight" Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding Weight}"/>
+            <TextBox x:Name="TbWeight" Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding Weight}" PreviewTextInput="TbWeight_PreviewTextInput"/>
             
             <!--Рост-->
             <TextBlock Grid.Row="4" Margin="10,10,10,10" Grid.Column="3">Рост:</TextBlock>
-            <TextBox x:Name="TbHeight" Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Height}"/>
+            <TextBox x:Name="TbHeight" Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Height}" PreviewTextInput="TbHeight_PreviewTextInput"/>
             
 
 
         </Grid>
 
         <DockPanel Grid.Row="1" LastChildFill="False" HorizontalAlignment="Right">
-            <Button Name="BtnOk" Click="BtnOk_Click" Width="80" Background="White" Margin="10" DockPanel.Dock="Left">ОК</Button>
-            <Button Name="BtnCancel" Click="BtnCancel_Click" Width="80" Background="White" Margin="10" DockPanel.Dock="Left">Отмена</Button>
+            <Button Name="BtnOk" Click="BtnOk_Click" Width="80" Background="White"  Margin="10,5,10,5" DockPanel.Dock="Left">ОК</Button>
+            <Button Name="BtnCancel" Click="BtnCancel_Click" Width="80" Background="White"  Margin="10,5,10,5" DockPanel.Dock="Left">Отмена</Button>
         </DockPanel>
     </Grid>
 </Window>

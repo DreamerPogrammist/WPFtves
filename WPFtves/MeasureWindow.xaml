@@ -1,0 +1,50 @@
+﻿<Window x:Class="WPFtves.MeasureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFtves"
+        mc:Ignorable="d"
+        Title="MeasureWindow" Height="300" Width="400"
+        PreviewKeyUp="Window_PreviewKeyUp">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.RowSpan="2" DataContext="{Binding ImtPatients}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"  MinHeight="35.96" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            
+            <!--Рост-->
+            <TextBlock Grid.Row="1" Margin="10,10,10,10" Grid.Column="0">Рост:</TextBlock>
+            <TextBox x:Name="TbHeight" PreviewTextInput="TbHeight_PreviewTextInput" Grid.Row="1" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding Height}"/>
+
+            <!--Вес-->
+            <TextBlock Grid.Row="2" Margin="10,10,10,10" Grid.Column="0">Вес:</TextBlock>
+            <TextBox x:Name="TbWeight" PreviewTextInput="TbWeight_PreviewTextInput" Grid.Row="2" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding Weight}"/>
+            
+            <!--ИМТ-->
+            <TextBlock Grid.Row="3" Margin="10,10,10,10" Grid.Column="0">ИМТ:</TextBlock>
+            <TextBlock x:Name="TbImt" Grid.Row="3" Margin="5,5,5,5" Grid.Column="1" VerticalAlignment="Center"/>
+
+
+
+        </Grid>
+
+        <DockPanel Grid.Row="1" LastChildFill="False" HorizontalAlignment="Right">
+            <Button Name="BtnOk" Click="BtnOk_Click" Width="80" Background="White" Margin="10,5,10,5" DockPanel.Dock="Left">ОК</Button>
+            <Button Name="BtnCancel" Click="BtnCancel_Click" Width="80" Background="White"  Margin="10,5,10,5" DockPanel.Dock="Left">Отмена</Button>
+        </DockPanel>
+    </Grid>
+</Window>

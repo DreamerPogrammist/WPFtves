@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using WPFtves.Objects;
 using WPFtves.AppData;
 using System.DirectoryServices;
+using System.Windows.Controls.Primitives;
 
 namespace WPFtves
 {
@@ -36,9 +37,7 @@ namespace WPFtves
 
 
             LoadPatients();
-            //DgPatients.DataContext = this;
-            //DgPatients.ItemsSource = Patients;
-
+            
         }
 
         private void LoadPatients()
@@ -50,6 +49,16 @@ namespace WPFtves
             {
                 Patients.Add(item);
             }
+        }
+
+        private void BtnM_Click(object sender, RoutedEventArgs e)
+        {
+            if (DgPatients.SelectedItem is Patient selected)
+            {
+                MagazineWindow magazineWindow = new MagazineWindow(selected.Id);
+                magazineWindow.ShowDialog();
+            }
+            
         }
 
         private void BtnD_Click(object sender, RoutedEventArgs e)
@@ -76,7 +85,6 @@ namespace WPFtves
         {
             if (DgPatients.SelectedItem is Patient selected)
             {
-                MessageBox.Show($"Выбран пациент {selected.LastName}");
                 Patient = selected;
             }
         }

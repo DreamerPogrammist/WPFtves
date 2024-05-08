@@ -21,7 +21,7 @@ namespace WPFtves.Objects
         public Patient() 
         { 
         }
-        public Patient(int id, string lastname, string namepatient, string fathername, string birthday, string sex, string insurance, int height, int weight)
+        public Patient(int id, string lastname, string namepatient, string fathername, DateTime birthday, string sex, string insurance, double height, double weight)
         {
             Id = id;
             LastName = lastname;
@@ -38,11 +38,11 @@ namespace WPFtves.Objects
         public string LastName { get; set; }
         public string NamePatient { get; set; }
         public string FatherName { get; set; }
-        public string Birthday { get; set; }
+        public DateTime Birthday { get; set; }
         public string Sex { get; set; }
         public string Insurance { get; set; }
-        public int Height { get; set; }
-        public int Weight { get; set; }
+        public double Height { get; set; }
+        public double Weight { get; set; }
 
         public bool Create()
         {
@@ -51,11 +51,11 @@ namespace WPFtves.Objects
             command.Parameters.AddWithValue("@a", NpgsqlDbType.Varchar, LastName);
             command.Parameters.AddWithValue("@b", NpgsqlDbType.Varchar, NamePatient);
             command.Parameters.AddWithValue("@c", NpgsqlDbType.Varchar, FatherName);
-            command.Parameters.AddWithValue("@d", NpgsqlDbType.Varchar, Birthday);
+            command.Parameters.AddWithValue("@d", NpgsqlDbType.Date, Birthday);
             command.Parameters.AddWithValue("@e", NpgsqlDbType.Varchar, Sex);
             command.Parameters.AddWithValue("@f", NpgsqlDbType.Varchar, Insurance);
-            command.Parameters.AddWithValue("@g", NpgsqlDbType.Integer, Height);
-            command.Parameters.AddWithValue("@h", NpgsqlDbType.Integer, Weight);
+            command.Parameters.AddWithValue("@g", NpgsqlDbType.Double, Height);
+            command.Parameters.AddWithValue("@h", NpgsqlDbType.Double, Weight);
             var result = command.ExecuteNonQuery();
             return result == 1;
         }
@@ -77,11 +77,11 @@ namespace WPFtves.Objects
                             result.GetString(1),
                             result.GetString(2),
                             result.GetString(3),
-                            result.GetString(4),
+                            result.GetDateTime(4),
                             result.GetString(5),
                             result.GetString(6),
-                            result.GetInt32(7),
-                            result.GetInt32(8)));
+                            result.GetDouble(7),
+                            result.GetDouble(8)));
                     }
                 }
                 result.Close();

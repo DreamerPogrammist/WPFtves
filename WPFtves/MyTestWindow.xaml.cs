@@ -20,11 +20,9 @@ namespace WPFtves
     public partial class MyTestWindow : Window
     {
         public Patient Patient { get; set; } = new Patient();
-        //public ObservableCollection<Patient> Patients { get; set; }
 
         public MyTestWindow()
         {
-            //Patient = patient;
             InitializeComponent();
             DataContext = Patient;
             TbLastName.DataContext = Patient;
@@ -37,12 +35,29 @@ namespace WPFtves
             TbWeight.DataContext = Patient;
         }
 
-        
+        private void TbHeight_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+            }
+        }
+        private void TbWeight_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
             Patient.Create();
 
-            string message = "Пациент добавлен!";
+            double height100 = Patient.Height/100;
+            double imt = Math.Round(Patient.Weight/(height100*height100), 2);
+
+            string message = $"Пациент {Patient.LastName} добавлен! \n \n ИМТ пациента = {imt}";
             MessageBox.Show(message);
             Close();
         }
@@ -51,6 +66,12 @@ namespace WPFtves
         {
             
             Close();
+        }
+
+        private void TbBirthday_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DateTime? selectedDate = TbBirthday.SelectedDate;
+            //MessageBox.Show(selectedDate.Value.Date.ToShortDateString());
         }
     }
 }
