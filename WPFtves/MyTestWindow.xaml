@@ -42,7 +42,7 @@
             <TextBox x:Name="TbName" Grid.Row="1" MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" DataContext="{Binding}" Text="{Binding NamePatient}"/>
 
             <!--Отчество-->
-            <TextBlock Grid.Row="2"  Margin="10,10,10,10">Отчество:</TextBlock>
+            <TextBlock Grid.Row="2" Margin="10,10,10,10">Отчество:</TextBlock>
             <TextBox x:Name="TbFatherName" Grid.Row="2" MinWidth="300" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding FatherName}"/>
 
             <!--Дата рождения-->
@@ -51,15 +51,20 @@
 
             <!--Пол-->
             <TextBlock Grid.Row="1" Margin="10,10,10,10" Grid.Column="3">Пол:</TextBlock>
-            <TextBox x:Name="TbSex" Grid.Row="1" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Sex}"/>
-
+            <ComboBox x:Name="CbSex" Grid.Row="1" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Sex}" SelectionChanged="CbSex_SelectionChanged">
+                <TextBlock>М</TextBlock>
+                <TextBlock>Ж</TextBlock>
+            </ComboBox>
+            
             <!--СНИЛС-->
             <TextBlock Grid.Row="2" Margin="10,10,10,10" Grid.Column="3">СНИЛС:</TextBlock>
             <TextBox x:Name="TbInsurance" Grid.Row="2" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="4" Text="{Binding Insurance}"/>
             
             <!--Измерения-->
             <TextBlock Grid.Row="3" Margin="10,10,10,10" Grid.Column="1">Измерения:</TextBlock>
+
             
+
             <!--Вес-->
             <TextBlock Grid.Row="4" Margin="10,10,10,10" Grid.Column="0">Вес:</TextBlock>
             <TextBox x:Name="TbWeight" Grid.Row="4" VerticalContentAlignment="Center" Margin="5,5,5,5" Grid.Column="1" Text="{Binding Weight}" PreviewTextInput="TbWeight_PreviewTextInput"/>

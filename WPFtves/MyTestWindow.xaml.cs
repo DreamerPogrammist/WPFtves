@@ -28,8 +28,10 @@ namespace WPFtves
             TbLastName.DataContext = Patient;
             TbName.DataContext = Patient;
             TbFatherName.DataContext = Patient;
+            //TbBirthday.DataContext = Patient;
             TbBirthday.DataContext = Patient;
-            TbSex.DataContext = Patient;
+            //TbSex.DataContext = Patient;
+            CbSex.DataContext = Patient;
             TbInsurance.DataContext = Patient;
             TbHeight.DataContext = Patient;
             TbWeight.DataContext = Patient;
@@ -72,6 +74,11 @@ namespace WPFtves
         {
             DateTime? selectedDate = TbBirthday.SelectedDate;
             //MessageBox.Show(selectedDate.Value.Date.ToShortDateString());
+        }
+
+        private void CbSex_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedSex = CbSex.SelectedValuePath;
         }
     }
 }
