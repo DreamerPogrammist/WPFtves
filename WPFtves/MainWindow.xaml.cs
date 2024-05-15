@@ -89,5 +89,11 @@ namespace WPFtves
             }
         }
 
+        private void BtnF_Click(object sender, RoutedEventArgs e)
+        {
+            FilterWindow filterWindow = new FilterWindow();
+            filterWindow.ShowDialog();
+        }
+
     }
 }

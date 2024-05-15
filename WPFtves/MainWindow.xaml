@@ -16,20 +16,11 @@
         <Grid Grid.RowSpan="6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-
             </Grid.RowDefinitions>
 
             <DataGrid ItemsSource="{Binding Patients}" Name="DgPatients" Grid.Row="6" Grid.ColumnSpan="6" AutoGenerateColumns="False" 
@@ -57,9 +48,10 @@
         <!--Кнопки-->
        
          <DockPanel Grid.Row="3" LastChildFill="False" HorizontalAlignment="Right">
-            <Button Grid.Row="4" Name="BtnMag_Click" Click="BtnM_Click" Margin="10,5,10,5" Padding="5" Grid.RowSpan="1" Grid.Column="4">Журнал измерений</Button>
-            <Button Grid.Row="4" Name="BtnDel_Click" Click="BtnD_Click" Margin="10,5,10,5" Padding="5" Grid.RowSpan="1" Grid.Column="4">Удалить пациента</Button>
-            <Button Grid.Row="4" Name="BtnAdd_Click"  Click="Btn_Click" Margin="10,5,10,5" Padding="5" Grid.RowSpan="1" Grid.Column="4" >Добавить пациента</Button>
+            <Button Grid.Row="4" Name="BtnFil_Click" Click="BtnF_Click" Margin="10,5,10,5" Padding="5" Grid.RowSpan="1" Grid.Column="0">Отфильтровать</Button>
+            <Button Grid.Row="4" Name="BtnMag_Click" Click="BtnM_Click" Margin="10,5,10,5" Padding="5" Grid.RowSpan="1" Grid.Column="1">Журнал измерений</Button>
+            <Button Grid.Row="4" Name="BtnDel_Click" Click="BtnD_Click" Margin="10,5,10,5" Padding="5" Grid.RowSpan="1" Grid.Column="1">Удалить пациента</Button>
+            <Button Grid.Row="4" Name="BtnAdd_Click"  Click="Btn_Click" Margin="10,5,10,5" Padding="5" Grid.RowSpan="1" Grid.Column="1" >Добавить пациента</Button>
         </DockPanel> 
         
     </Grid>
